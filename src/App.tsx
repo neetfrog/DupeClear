@@ -17,7 +17,7 @@ export default function App() {
     startScan, stopScan,
     toggleFileSelected, selectAllInGroup, deselectAllInGroup,
     selectAllDuplicates, deselectAll, applySelectionRule,
-    getSelectedFiles, removeSelected, removeGroup,
+    getSelectedFiles, removeSelected, removeGroup, deleteSelectedFiles,
   } = useScanner();
 
   const hasResults = duplicateGroups.length > 0 || status === 'complete';
@@ -129,6 +129,7 @@ export default function App() {
                     onRemoveSelected={removeSelected}
                     onRemoveGroup={removeGroup}
                     getSelectedFiles={getSelectedFiles}
+                    onDeleteSelected={deleteSelectedFiles}
                   />
                 )}
                 {activeTab === 'settings' && (

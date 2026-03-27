@@ -21,6 +21,7 @@ interface ResultsTabProps {
   onRemoveSelected: () => void;
   onRemoveGroup: (groupId: string) => void;
   getSelectedFiles: () => ScannedFile[];
+  onDeleteSelected?: () => Promise<{ deleted: number; failed: number; error?: string }>;
 }
 
 type ViewMode = 'grouped' | 'thumbnail';
@@ -359,7 +360,7 @@ function SelectionAssistant({ onApplyRule, onSelectAll, onDeselectAll }: {
 
 export default function ResultsTab({
   groups, stats, onToggleFile, onSelectAllInGroup, onDeselectAllInGroup,
-  onSelectAllDuplicates, onDeselectAll, onApplyRule, onRemoveSelected, onRemoveGroup, getSelectedFiles,
+  onSelectAllDuplicates, onDeselectAll, onApplyRule, onRemoveSelected, onRemoveGroup, getSelectedFiles, onDeleteSelected,
 }: ResultsTabProps) {
   const [viewMode, setViewMode] = useState<ViewMode>('grouped');
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set(groups.map(g => g.id)));
@@ -370,6 +371,8 @@ export default function ResultsTab({
   const [sortDir, setSortDir] = useState<SortDirection>('desc');
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [expandAll, setExpandAll] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [deleteMessage, setDeleteMessage] = useState('');
 
   const selectedFiles = getSelectedFiles();
   const selectedCount = selectedFiles.length;
@@ -648,16 +651,40 @@ export default function ResultsTab({
               Deselect All
             </button>
             {!showDeleteConfirm ? (
-              <button
-                onClick={() => setShowDeleteConfirm(true)}
-                className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-red-600/20 hover:bg-red-600/30 border border-red-500/30 text-red-400 text-xs font-semibold transition-colors"
-              >
-                <Trash2 size={13} />
-                Remove from List
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setShowDeleteConfirm(true)}
+                  className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-red-600/20 hover:bg-red-600/30 border border-red-500/30 text-red-400 text-xs font-semibold transition-colors"
+                >
+                  <Trash2 size={13} />
+                  Remove from List
+                </button>
+                {onDeleteSelected && (
+                  <button
+                    onClick={async () => {
+                      setIsDeleting(true);
+                      try {
+                        const result = await onDeleteSelected();
+                        setDeleteMessage(`Deleted ${result.deleted} files${result.failed > 0 ? `, ${result.failed} failed` : ''}`);
+                        setTimeout(() => setDeleteMessage(''), 3000);
+                      } catch (err: any) {
+                        setDeleteMessage(`Error: ${err.message}`);
+                      } finally {
+                        setIsDeleting(false);
+                      }
+                    }}
+                    disabled={isDeleting}
+                    className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-orange-600/20 hover:bg-orange-600/30 border border-orange-500/30 text-orange-400 text-xs font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="Permanently delete selected files from disk"
+                  >
+                    <Trash2 size={13} />
+                    {isDeleting ? 'Deleting...' : 'Delete Files'}
+                  </button>
+                )}
+              </div>
             ) : (
               <div className="flex items-center gap-2">
-                <span className="text-amber-400 text-xs">Are you sure?</span>
+                <span className="text-amber-400 text-xs">Remove from list?</span>
                 <button
                   onClick={() => { onRemoveSelected(); setShowDeleteConfirm(false); }}
                   className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-semibold transition-colors"
@@ -671,6 +698,11 @@ export default function ResultsTab({
                   Cancel
                 </button>
               </div>
+            )}
+            {deleteMessage && (
+              <span className={`text-xs px-3 py-1 rounded ${deleteMessage.startsWith('Deleted') ? 'bg-emerald-600/20 text-emerald-400' : 'bg-red-600/20 text-red-400'}`}>
+                {deleteMessage}
+              </span>
             )}
           </motion.div>
         )}

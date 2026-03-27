@@ -23,6 +23,7 @@ export function useScanner() {
   const [scanOptions, setScanOptions] = useState<ScanOptions>(DEFAULT_SCAN_OPTIONS);
   const abortRef = useRef(false);
   const fileHandles = useRef<Map<string, File>>(new Map());
+  const fileSystemHandles = useRef<Map<string, FileSystemFileHandle>>(new Map());
   const startTimeRef = useRef<number>(0);
 
   // ─── File collection ─────────────────────────────────────────────────────
@@ -58,6 +59,7 @@ export function useScanner() {
           };
           if (matchesOptions(scannedFile, options)) {
             fileHandles.current.set(scannedFile.id, file);
+            fileSystemHandles.current.set(scannedFile.id, handle as FileSystemFileHandle);
             collected.push(scannedFile);
             onUpdate(collected.length, name);
           }
@@ -74,6 +76,7 @@ export function useScanner() {
   ) => {
     abortRef.current = false;
     fileHandles.current.clear();
+    fileSystemHandles.current.clear();
     startTimeRef.current = Date.now();
     setStatus('scanning');
     setStats({ ...initialStats, phase: 'Collecting files…' });
@@ -595,11 +598,61 @@ export function useScanner() {
     setDuplicateGroups(prev => prev.filter(g => g.id !== groupId));
   }, []);
 
+  const deleteSelectedFiles = useCallback(async (): Promise<{ deleted: number; failed: number; error?: string }> => {
+    const selectedFiles = getSelectedFiles();
+    if (selectedFiles.length === 0) {
+      return { deleted: 0, failed: 0 };
+    }
+
+    let deleted = 0;
+    let failed = 0;
+
+    for (const file of selectedFiles) {
+      try {
+        const handle = fileSystemHandles.current.get(file.id);
+        if (!handle) {
+          failed++;
+          continue;
+        }
+        
+        // Try to delete using the modern API if available
+        if ('remove' in handle && typeof (handle as any).remove === 'function') {
+          await (handle as any).remove();
+        } else {
+          // Fallback: file handles without remove() method
+          failed++;
+          continue;
+        }
+        
+        deleted++;
+      } catch (err) {
+        failed++;
+      }
+    }
+
+    // Update UI - remove deleted files from groups
+    if (deleted > 0) {
+      setDuplicateGroups(prev => {
+        const next = prev.map(g => ({
+          ...g,
+          files: g.files.filter(f => !f.selected),
+        })).filter(g => g.files.length >= 2);
+        return next;
+      });
+    }
+
+    return { 
+      deleted, 
+      failed,
+      error: failed > 0 ? `Successfully deleted ${deleted} files. ${failed} files failed to delete.` : undefined
+    };
+  }, [getSelectedFiles]);
+
   return {
     status, stats, duplicateGroups, allFiles, scanOptions, setScanOptions,
     startScan, stopScan,
     toggleFileSelected, selectAllInGroup, deselectAllInGroup,
     selectAllDuplicates, deselectAll, applySelectionRule,
-    getSelectedFiles, removeSelected, removeGroup,
+    getSelectedFiles, removeSelected, removeGroup, deleteSelectedFiles,
   };
 }
