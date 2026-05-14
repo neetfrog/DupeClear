@@ -1,7 +1,7 @@
 {
   "name": "duplicate-clear",
   "productName": "DuplicateClear",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Open Source Duplicate File Finder - Fast duplicate detection powered by hashing",
   "author": "Your Name <you@example.com>",
   "license": "MIT",
