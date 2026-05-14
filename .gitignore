@@ -3,6 +3,9 @@ node_modules/
 
 # Build output
 dist/
+dist-electron/
+release/
+out/
 
 # Local env files
 .env
@@ -21,3 +24,8 @@ Thumbs.db
 # IDE/editor
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# Vite
+.vite/
