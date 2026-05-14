@@ -31,7 +31,7 @@ jobs:
       - name: Get version from tag
         id: tag_name
         run: |
-          $VERSION=${{ github.ref }}.replace('refs/tags/v', '')
+          $VERSION="${{ github.ref }}".replace('refs/tags/v', '')
           echo "VERSION=$VERSION" >> $env:GITHUB_OUTPUT
 
       - name: Create Release
