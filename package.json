@@ -1,6 +1,6 @@
 {
   "name": "duplicate-clear",
-  "productName": "DuplicateClear",
+  "productName": "DupeClear",
   "version": "1.0.1",
   "description": "Open Source Duplicate File Finder - Fast duplicate detection powered by hashing",
   "author": "Your Name <you@example.com>",
@@ -47,8 +47,8 @@
     "electron-builder": "^25.0.5"
   },
   "build": {
-    "appId": "com.duplicateclear.app",
-    "productName": "DuplicateClear",
+    "appId": "com.dupeclear.app",
+    "productName": "DupeClear",
     "files": [
       "dist/**/*",
       "dist-electron/**/*"
@@ -79,10 +79,10 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "DuplicateClear"
+      "shortcutName": "DupeClear"
     },
     "portable": {
-      "artifactName": "DuplicateClear-${version}-portable.exe"
+      "artifactName": "DupeClear-${version}-portable.exe"
     }
   }
 }

@@ -1,6 +1,6 @@
-# DuplicateClear - Production Build Guide
+# DupeClear - Production Build Guide
 
-This document covers production setup and deployment of DuplicateClear as an Electron application.
+This document covers production setup and deployment of DupeClear as an Electron application.
 
 ## What Was Added for Production
 
@@ -12,8 +12,8 @@ This document covers production setup and deployment of DuplicateClear as an Ele
 ### 2. **Build Configuration**
 - **electron-builder** - Automated Windows installer and portable exe generation
 - Builds to `release/` directory:
-  - `DuplicateClear-1.0.0.exe` - NSIS installer (with uninstall, shortcuts)
-  - `DuplicateClear-1.0.0-portable.exe` - Standalone portable version
+  - `DupeClear-1.0.0.exe` - NSIS installer (with uninstall, shortcuts)
+  - `DupeClear-1.0.0-portable.exe` - Standalone portable version
 
 ### 3. **GitHub Actions Workflow**
 - Automatic release builds on git tags (`v1.0.0`)
@@ -50,8 +50,8 @@ npm run build
 ```
 
 This creates:
-- `release/DuplicateClear-1.0.0.exe` (installer)
-- `release/DuplicateClear-1.0.0-portable.exe` (portable)
+- `release/DupeClear-1.0.0.exe` (installer)
+- `release/DupeClear-1.0.0-portable.exe` (portable)
 
 ### Build Installer Only
 ```bash
@@ -109,11 +109,11 @@ npm run build:portable
 
 ### Download Releases
 
-Users can download from: `https://github.com/YOUR_USERNAME/DuplicateClear/releases`
+Users can download from: `https://github.com/YOUR_USERNAME/DupeClear/releases`
 
 Files available:
-- `DuplicateClear-X.X.X.exe` - Installer (recommended for most users)
-- `DuplicateClear-X.X.X-portable.exe` - Portable version
+- `DupeClear-X.X.X.exe` - Installer (recommended for most users)
+- `DupeClear-X.X.X-portable.exe` - Portable version
 
 ## Important Notes
 

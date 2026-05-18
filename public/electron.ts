@@ -67,7 +67,7 @@ function createMenu() {
       label: 'Help',
       submenu: [
         {
-          label: 'About DuplicateClear',
+          label: 'About DupeClear',
           click: () => {
             if (mainWindow) {
               mainWindow.webContents.send('show-about');

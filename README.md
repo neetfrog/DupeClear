@@ -1,4 +1,4 @@
-# DuplicateClear 🔍
+# DupeClear 🔍
 
 **Fast, Open-Source Duplicate File Finder** — Scan directories and remove duplicate files powered by cryptographic hashing.
 
@@ -8,7 +8,7 @@
 
 ## 📥 Download
 
-### [⬇️ Get DuplicateClear for Windows](https://github.com/neetfrog/DuplicateClear/releases)
+### [⬇️ Get DupeClear for Windows](https://github.com/neetfrog/DupeClear/releases)
 
 - **Portable** - No installation required, run directly
 - **Installer** - Standard Windows setup
@@ -27,7 +27,7 @@
 ## 🚀 Quick Start
 
 ### Windows Users
-1. [Download from Releases](https://github.com/neetfrog/DuplicateClear/releases)
+1. [Download from Releases](https://github.com/neetfrog/DupeClear/releases)
 2. Run the portable EXE or installer
 3. Select folder to scan
 4. Review and delete duplicates
@@ -109,9 +109,9 @@ MIT License - See LICENSE file for details
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/neetfrog/DuplicateClear)
-- [Releases & Downloads](https://github.com/neetfrog/DuplicateClear/releases)
-- [Issues](https://github.com/neetfrog/DuplicateClear/issues)
+- [GitHub Repository](https://github.com/neetfrog/DupeClear)
+- [Releases & Downloads](https://github.com/neetfrog/DupeClear/releases)
+- [Issues](https://github.com/neetfrog/DupeClear/issues)
 
 ---
 

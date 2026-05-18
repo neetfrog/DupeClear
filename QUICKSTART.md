@@ -1,11 +1,11 @@
-# DuplicateClear - Quick Start Guide
+# DupeClear - Quick Start Guide
 
 ## For Users (Installing the App)
 
 ### Windows Users
 1. Go to [Releases](../../releases)
-2. Download the latest **DuplicateClear-X.X.X.exe** (installer)
-   - Or download **DuplicateClear-X.X.X-portable.exe** (portable)
+2. Download the latest **DupeClear-X.X.X.exe** (installer)
+   - Or download **DupeClear-X.X.X-portable.exe** (portable)
 3. Run the file
 4. Follow the installation wizard
 

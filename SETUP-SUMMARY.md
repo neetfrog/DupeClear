@@ -20,7 +20,7 @@ Your DuplicateClear duplicate file finder is now configured as a **production-re
    - Workflow: `.github/workflows/release.yml`
    - Trigger: Push git tag (e.g., `git tag v1.0.0 && git push --tags`)
    - Action: Auto-builds and uploads .exe to Releases tab
-   - Result: Users download from `GitHub.com/YOUR_USER/DuplicateClear/releases`
+   - Result: Users download from `GitHub.com/YOUR_USER/DupeClear/releases`
 
 4. **Build Configuration**
    - Updated `package.json` with Electron scripts and dependencies
@@ -59,7 +59,7 @@ npm run build:win
 
 ### 2. Test Portable Exe
 ```bash
-./release/DuplicateClear-1.0.0-portable.exe
+./release/DupeClear-1.0.0-portable.exe
 ```
 
 ### 3. Create GitHub Release

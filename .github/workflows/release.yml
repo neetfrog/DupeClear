@@ -39,9 +39,9 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            release/DuplicateClear-*.exe
+            release/DupeClear-*.exe
           body: |
-            # DuplicateClear v${{ steps.tag_name.outputs.VERSION }}
+            # DupeClear v${{ steps.tag_name.outputs.VERSION }}
 
             ## Downloads
             - **Installer** (.exe) - Recommended for most users
@@ -50,12 +50,12 @@ jobs:
             ## Installation
 
             ### For Installer
-            1. Download `DuplicateClear-${{ steps.tag_name.outputs.VERSION }}.exe`
+            1. Download `DupeClear-${{ steps.tag_name.outputs.VERSION }}.exe`
             2. Run the installer
             3. Follow the setup wizard
 
             ### For Portable
-            1. Download `DuplicateClear-${{ steps.tag_name.outputs.VERSION }}-portable.exe`
+            1. Download `DupeClear-${{ steps.tag_name.outputs.VERSION }}-portable.exe`
             2. Run directly (no installation)
 
             ---

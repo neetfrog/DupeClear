@@ -30,7 +30,7 @@
   ```bash
   npm run build:win
   # Check release/ folder for .exe files
-  # Test running: release\DuplicateClear-1.0.0-portable.exe
+  # Test running: release\DupeClear-1.0.0-portable.exe
   ```
 
 - [ ] **Create First Release**
@@ -43,7 +43,7 @@
   git push origin v1.0.0
   
   # Wait for GitHub Actions to complete
-  # Check: https://github.com/YOUR_USERNAME/DuplicateClear/releases
+  # Check: https://github.com/YOUR_USERNAME/DupeClear/releases
   ```
 
 ## 🚀 Release Process (Recurring)
@@ -66,8 +66,8 @@ After `npm run build:win`, you'll have:
 
 | File | Purpose | Size* |
 |------|---------|-------|
-| `DuplicateClear Setup 1.0.0.exe` | Full installer with uninstaller | ~200MB |
-| `DuplicateClear-1.0.0-portable.exe` | Portable (no installation) | ~190MB |
+| `DupeClear Setup 1.0.0.exe` | Full installer with uninstaller | ~200MB |
+| `DupeClear-1.0.0-portable.exe` | Portable (no installation) | ~190MB |
 
 *Approximate sizes (varies with dependencies)
 

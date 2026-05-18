@@ -52,7 +52,7 @@
 ### `package.json`
 **Changes:**
 - Updated name from "react-vite-tailwind" to "duplicate-clear"
-- Added productName: "DuplicateClear"
+- Added productName: "DupeClear"
 - Updated version: "0.0.0" → "1.0.0"
 - Added author, license, and description fields
 - Updated main entry: "dist-electron/main.js"
@@ -106,8 +106,8 @@ dist-electron/                 # Electron build
 └── preload.js                 # Preload script
 
 release/                       # Installers
-├── DuplicateClear Setup 1.0.0.exe          # NSIS installer
-├── DuplicateClear-1.0.0-portable.exe       # Portable exe
+├── DupeClear Setup 1.0.0.exe          # NSIS installer
+├── DupeClear-1.0.0-portable.exe       # Portable exe
 ├── win-unpacked/              # Unpacked app
 ├── builder-debug.yml
 ├── latest.yml

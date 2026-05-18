@@ -39,7 +39,7 @@ export default function AboutTab() {
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <a
-                href="https://github.com/neetfrog/DuplicateClear/releases"
+                href="https://github.com/neetfrog/DupeClear/releases"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-violet-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 hover:bg-violet-400 transition"
@@ -47,7 +47,7 @@ export default function AboutTab() {
                 Download for Windows
               </a>
               <a
-                href="https://github.com/neetfrog/DuplicateClear/releases"
+                href="https://github.com/neetfrog/DupeClear/releases"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-violet-300 hover:text-violet-100 transition"
