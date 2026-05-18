@@ -37,6 +37,24 @@ export default function AboutTab() {
               <span className="badge bg-emerald-500/20 text-emerald-300">MIT License</span>
               <span className="badge bg-blue-500/20 text-blue-300">Free Forever</span>
             </div>
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <a
+                href="https://github.com/neetfrog/DuplicateClear/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-violet-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 hover:bg-violet-400 transition"
+              >
+                Download for Windows
+              </a>
+              <a
+                href="https://github.com/neetfrog/DuplicateClear/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-violet-300 hover:text-violet-100 transition"
+              >
+                View releases ↗
+              </a>
+            </div>
           </div>
         </div>
         <p className="mt-4 text-gray-300 text-sm leading-relaxed">
