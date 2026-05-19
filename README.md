@@ -1,4 +1,4 @@
-# DupeClear 🔍
+# DupeClear
 
 **Fast, Open-Source Duplicate File Finder** — Scan directories and remove duplicate files powered by cryptographic hashing.
 
@@ -6,9 +6,9 @@
 ![Version](https://img.shields.io/badge/version-1.0.1-green)
 ![Platform](https://img.shields.io/badge/platform-Windows-brightgreen)
 
-## 📥 Download
+## Download
 
-### [⬇️ Get DupeClear for Windows](https://github.com/neetfrog/DupeClear/releases)
+### [Get DupeClear for Windows](https://github.com/neetfrog/DupeClear/releases)
 
 - **Portable** - No installation required, run directly
 - **Installer** - Standard Windows setup
@@ -52,14 +52,14 @@ npm version patch
 git push --tags
 ```
 
-## 📋 Usage
+## Usage
 
 1. **Scan** - Select one or more folders to scan for duplicates
 2. **Review** - Analyze results with detailed statistics
 3. **Select** - Choose which duplicate files to keep/remove
 4. **Delete** - Safely remove selected duplicates
 
-## 🛠️ Development
+## Development
 
 ### Tech Stack
 - **Frontend**: React 19 + TypeScript
@@ -75,7 +75,7 @@ npm run build:win    # Build installer + portable
 npm run build        # Full build
 ```
 
-## 📦 Architecture
+## Architecture
 
 ```
 src/
@@ -89,29 +89,29 @@ public/
 └── preload.ts     # IPC bridge
 ```
 
-## 🔐 Security
+## Security
 
 - Context isolation enabled
 - No Node.js integration in renderer
 - Secure IPC communication
 - No remote code execution
 
-## 📝 Documentation
+## Documentation
 
 - **[QUICKSTART.md](QUICKSTART.md)** - Quick setup guide
 - **[PRODUCTION.md](PRODUCTION.md)** - Production deployment guide
 - **[RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md)** - Release process
 - **[CHANGELOG.md](CHANGELOG.md)** - Version history
 
-## 🤝 Contributing
+## Contributing
 
 This is an open-source project. Contributions welcome!
 
-## 📄 License
+## License
 
 MIT License - See LICENSE file for details
 
-## 🔗 Links
+## Links
 
 - [GitHub Repository](https://github.com/neetfrog/DupeClear)
 - [Releases & Downloads](https://github.com/neetfrog/DupeClear/releases)
@@ -119,4 +119,4 @@ MIT License - See LICENSE file for details
 
 ---
 
-**Made with ❤️ by neetfrog**
+Made with care by neetfrog
