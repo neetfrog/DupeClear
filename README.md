@@ -24,7 +24,11 @@
 - 🎨 **Modern UI** - Beautiful React-based interface
 - 💾 **Batch Operations** - Delete multiple files at once
 
-## 🚀 Quick Start
+## �️ Screenshot
+
+![DupeClear Screenshot](public/screenshot.png)
+
+## �🚀 Quick Start
 
 ### Windows Users
 1. [Download from Releases](https://github.com/neetfrog/DupeClear/releases)
