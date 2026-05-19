@@ -15,20 +15,20 @@
 
 ---
 
-## ✨ Features
-
-- 🔍 **Smart Duplicate Detection** - Uses MD5/SHA hashing for accurate detection
-- 📊 **Real-time Statistics** - View scan progress and duplicate counts
-- 🎯 **Flexible Selection** - Choose which duplicates to keep or delete
-- ⚡ **Fast Scanning** - Optimized for performance
-- 🎨 **Modern UI** - Beautiful React-based interface
-- 💾 **Batch Operations** - Delete multiple files at once
-
-## �️ Screenshot
+## Screenshot
 
 ![DupeClear Screenshot](public/screenshot.png)
 
-## �🚀 Quick Start
+## Features
+
+- **Smart Duplicate Detection** - Uses MD5/SHA hashing for accurate detection
+- **Real-time Statistics** - View scan progress and duplicate counts
+- **Flexible Selection** - Choose which duplicates to keep or delete
+- **Fast Scanning** - Optimized for performance
+- **Modern UI** - Beautiful React-based interface
+- **Batch Operations** - Delete multiple files at once
+
+## Quick Start
 
 ### Windows Users
 1. [Download from Releases](https://github.com/neetfrog/DupeClear/releases)
